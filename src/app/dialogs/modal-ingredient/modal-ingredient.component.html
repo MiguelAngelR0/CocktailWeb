@@ -1,0 +1,9 @@
+<div class="dialog">
+<h2>Ingredients</h2>
+<ul>
+  <li class="mt-3" *ngFor="let ingredient of data.ingredients">
+    <img [src]="ingredient.imageUrl" alt="{{ ingredient.name }}" width="50" height="50" />
+    <strong>{{ ingredient.name }}</strong>: {{ ingredient.measure }}
+  </li>
+</ul>
+</div>

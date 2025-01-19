@@ -1,0 +1,12 @@
+/* Hacer que el contenedor ocupe toda la altura de la ventana */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* El contenido se expande para ocupar el espacio restante */
+  .content {
+    flex: 1;
+  }
+  

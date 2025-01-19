@@ -1,0 +1,18 @@
+.header {
+  color: var(--text-color);
+  width: 100%;
+}
+.header a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  border-bottom: 3px solid transparent;
+  display: inline-block;
+}
+.header span {
+  color: var(--main-color);
+}
+
+.navbar {
+  background-color: var(--bg-color);
+}/*# sourceMappingURL=navbar.component.css.map */
