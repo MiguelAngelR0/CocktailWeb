@@ -2,6 +2,20 @@
     max-width: 600px;
 }
 
+@media (max-width: 768px) {
+  .cocktail-card {
+      max-width: 90%;
+      padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cocktail-card {
+      max-width: 95%;
+      padding: 5px;
+  }
+}
+
 .flag-icon {
     display: inline-block;
     width: 2.5rem;

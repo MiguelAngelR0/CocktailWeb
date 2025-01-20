@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CocktailService } from '../../services/cocktail.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
@@ -9,13 +9,15 @@ import { ModalComponent } from '../../dialogs/modal/modal.component';
 import {  MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MatIconModule } from '@angular/material/icon';
+
+
 @Component({
   selector: 'app-cocktail-detail',
   standalone: true,
-  imports: [HttpClientModule, MatCardModule, CommonModule, MatButtonModule, MatDialogModule,CarouselModule,MatIconModule],
+  imports: [ MatCardModule, CommonModule, MatButtonModule, MatDialogModule,CarouselModule,MatIconModule, HttpClientModule],
   templateUrl: './cocktail-detail.component.html',
   styleUrl: './cocktail-detail.component.scss',
-  providers: [CocktailService]
+  providers: [CocktailService ],
 })
 export class CocktailDetailComponent {
   cocktail: any; 
@@ -36,8 +38,8 @@ export class CocktailDetailComponent {
   };
 
   constructor(
-    private route: ActivatedRoute,
     private cocktailService: CocktailService,
+    private route: ActivatedRoute,
     private dialog: MatDialog,
     private router: Router
   ) { }
@@ -66,8 +68,6 @@ export class CocktailDetailComponent {
       if (response && response.drinks && response.drinks.length > 0) {
         this.cocktail = response.drinks[0];
         this.instructions = this.cocktail.strInstructions || 'No disponible';
-
-        
 
         this.extractIngredients(this.cocktail);
 

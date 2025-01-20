@@ -4,7 +4,7 @@
     <p>Explora y encuentra los mejores cócteles de manera fácil y sencilla.</p>
   </header>
   
-  <div class="search-fields d-flex justify-content-between">
+  <div class="search-fields d-flex flex-wrap justify-content-between gap-3">
     <!-- Buscar por nombre -->
     <mat-form-field class="example-form-field">
       <mat-label>Buscar por nombre</mat-label>
@@ -38,8 +38,8 @@
     </mat-form-field>
 
   </div>
-  <div class="table-container">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort (matSortChange)="announceSortChange($event)">
+  <div class="table-container" style="overflow-x: auto; width: 100%;">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100" matSort (matSortChange)="announceSortChange($event)">
 
       <!-- ID Column -->
       <ng-container matColumnDef="idDrink">
